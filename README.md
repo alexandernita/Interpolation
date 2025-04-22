@@ -4,7 +4,7 @@ Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, presumably the output of so
 
 There is a theoretical justification for this optimism in the form of the **Weierstrass approximation theorem**, which says that polynomials are dense among the continuous functions on a compact interval $[a,b]$ in the supremum norm, $\lVert f\rVert_\infty=\sup_{x\in [a,b]}|f(x)|$.
 
-That is, <span style="text-decoration:overline">$\mathbb{R}[a,b])$</span>$=C([a,b])$[^1] in the technical sense that $\forall \varepsilon>0,\ \exists p(x)\in \mathbb{R}[a,b],\ \lVert f-p\rVert_\infty<\varepsilon$.[^2]  
+That is, <span style="text-decoration:overline">$\mathbb{R}[a,b]$</span>$=C([a,b])$[^1] in the technical sense that $\forall \varepsilon>0,\ \exists p(x)\in \mathbb{R}[a,b],\ \lVert f-p\rVert_\infty<\varepsilon$.[^2]  
 
 ## Single Polynomial Interpolation of $n+1$ Data Points
 
