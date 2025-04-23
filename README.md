@@ -32,7 +32,7 @@ L_i(x_j)=
 0,& \text{if }i\neq j\\ 
 1,& \text{if }i=j\\
 \end{cases}
-\quad\implies\quad
+\quad\text{and }\therefore \quad
 f(x_j)L_i(x_j)=
 \begin{cases}
 0,& \text{if }i\neq j\\ 
