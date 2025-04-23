@@ -90,7 +90,7 @@ $$
 Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division is typically used to compute $b_1,\dots, b_n$,
 
 $$
-\begin{algined}
+\begin{aligned}
 &\begin{array}{cccc}
         a_n&\qquad a_{n-1}\qquad &\cdots &a_0\\
         \downarrow&b_n&\cdots&\ast
