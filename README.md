@@ -32,16 +32,14 @@ L_i(x_j)=
 0,& \text{if }i\neq j\\ 
 1,& \text{if }i=j\\
 \end{cases}
-$$  
-Hence, $f(x_j)L_i(x_j)=\begin{cases}0,& \text{if }i\neq j\\ f(x_j),&\text{if }i=j\end{cases}$.  
-
-$$
-f(x)=
+\ \implies\ 
+f(x_j)L_i(x_j)=
 \begin{cases}
-1/d_{ij} & \quad \text{when $d_{ij} \leq 160$}\\ 
-0 & \quad \text{otherwise}
+0,& \text{if }i\neq j\\ 
+f(x_j),&\text{if }i=j
 \end{cases}
-$$
+$$  
+
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
