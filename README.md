@@ -17,24 +17,18 @@ This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we
 Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The $n$th **Lagrange polynomial** 
 
 $$
-p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)
+p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x),
+\quad \text{where}\quad L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
 $$
 
-is the *unique degree* $n$ polynomials passing through the $n+1$ points, where
-
-$$
-L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
-$$
-
-satisfies 
-
+is the *unique degree* $n$ polynomials passing through the $n+1$ points, since 
 $$
 L_i(x_j)=
 \begin{cases}
 0,& \text{if }i\neq j\\ 
 1,& \text{if }i=j\\
 \end{cases}
-\quad\text{and }\therefore \quad
+\quad\implies \quad
 f(x_j)L_i(x_j)=
 \begin{cases}
 0,& \text{if }i\neq j\\ 
