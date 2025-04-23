@@ -100,15 +100,10 @@ $$
 
 and
 
-$$
-\begin{array}{c|lcr}
-n & \text{Left} & \text{Center} & \text{Right} \\
-\hline
-1 & 0.24 & 1 & 125 \\
-2 & -1 & 189 & -8 \\
-3 & -20 & 2000 & 1+10i
-\end{array}
-$$
+| command  | description  |
+|--------  |------------  |
+| alpha    | so and so    |
+| beta     | so and so    | 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
