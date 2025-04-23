@@ -22,6 +22,7 @@ p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x),
 $$
 
 is the *unique degree* $n$ polynomials passing through the $n+1$ points, since 
+
 $$
 L_i(x_j)=
 \begin{cases}
