@@ -91,7 +91,7 @@ Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division
 
 $$
 \begin{array}{cccc}
-        a_n&\phantom{a_{n-1}} a_{n-1}\phantom{a_{n-1}} &\cdots &a_0\\
+        a_n&\qquad a_{n-1}\qquad &\cdots &a_0\\
         \downarrow&b_n&\cdots&\ast
 \end{array}
 $$
