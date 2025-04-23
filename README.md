@@ -90,7 +90,11 @@ $$
 Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division is typically used to compute $b_1,\dots, b_n$,
 
 $$
-\begin{array}{c|rrr}&1&2&1\\-1&&-1&-1\\\hline\\&1&1&0\\\end{array}
+\begin{array}{c|rrr}
+        &1&2&1\\-1&&-1&-1\\
+        \hline\\
+        &1&1&0
+\end{array}
 $$
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
