@@ -10,5 +10,5 @@ That is, $\text{Closure}(\mathbb{R}[a,b])=C([a,b])$[^1] in the technical sense t
 
 Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect them by a single polynomial $p(x)$.  
 
-[^1]: $\mathbb{R}[a,b]$ denotes the polynomials $\mathbb{R}[x]$ restricted, as functions, to the interval $[a,b]$.
+[^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
