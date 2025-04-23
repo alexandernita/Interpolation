@@ -12,7 +12,9 @@ This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we
 
 ## Single Polynomial Interpolation of $n+1$ Data Points
 
-Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The **Lagrange polynomial** 
+### Lagrange Polynomial Interpolation 
+
+Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The $n$th **Lagrange polynomial** 
 
 $$
 p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)
@@ -40,20 +42,34 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
-For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the $1$st Lagrange polynomial is the *unique line through the two points*, 
+For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the 1st Lagrange polynomial is the *unique line through the two points*, 
 
 $$
 p(x)    = f(x_0)L_0(x)+f(x_1)L_1(x)
         = f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
 $$
 
-while if we have three data points ($n=2$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, $(x_2,f(x_2))$, then the $2$nd Lagrange polynomial is the *unique parabola passing through the three points*,
+while if we have three data points ($n=2$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, $(x_2,f(x_2))$, then the 2nd Lagrange polynomial is the *unique parabola passing through the three points*,
 
 $$
 \begin{aligned}
 p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)+f(x_2)L_2(x)\\
         &= f(x_0)\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f(x_1)\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f(x_2)\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
 \end{aligned}
+$$
+
+Uniqueness of $p$ follows from the fact that $(L_0, L_1,\dots, L_n)$ forms a basis for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$. 
+
+### Error Bound for Lagrange Interpolation
+
+The **generalized Rolle theorem** says
+
+* If $f\in C^n([a,b])$ and if $f(x_i)=0$ for all $a\leq x_0< x_1<\cdots< x_n\leq b$, then $\exists c\in (x_0,x_n)\subseteq [a,b]$ for which $f^{(n)}(c)=0$.  
+
+and using this it can be shown that $\exists c\in (a,b)$ for which 
+
+$$
+f(x)-p(x)=\frac{f^{(n+1)(c)}}{(n+1)!}\prod_{i=0}^n(x-x_i)
 $$
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
