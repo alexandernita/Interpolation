@@ -40,6 +40,15 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
+For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, a degree $1$ polynomial is the line through the two points, 
+
+$$
+\begin{aligned}
+p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)\\
+        &= f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
+\end{aligned}
+$$
+
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
