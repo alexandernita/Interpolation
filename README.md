@@ -92,7 +92,7 @@ Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division
 $$
 \begin{array}{c|rrr}
         &1&2&1\\-1&&-1&-1\\
-        \hline\\
+        \hline
         &1&1&0
 \end{array}
 $$
