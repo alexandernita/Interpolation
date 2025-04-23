@@ -92,14 +92,23 @@ Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division
 $$
 \begin{aligned}
 &\begin{array}{cccc}
-        a_n&\qquad a_{n-1}\qquad &\ \cdots &\quad a_0\\
-        \downarrow&b_n&\ \cdots&\quad \ast
+        &a_n&\qquad a_{n-1}\qquad &\ \cdots &\quad a_0\\
+        x_0\ &\downarrow&b_n&\ \cdots&\quad \ast
 \end{array}\\
 &\text{-------------------------------------}\\
 &\begin{array}{cccc}
-a_n&a_{n-1}+b_nx_0&\cdots&\ast\\
-        =b_n&=b_{n-1}&\cdots&=b_0
+        \quad &a_n&a_{n-1}+b_nx_0&\cdots&\ \ast\\
+        &=b_n&=b_{n-1}&\cdots&\ =b_0
 \end{array}
+\end{aligned}
+$$
+but the underlying idea, which is what we need to code, anyway, is 
+$$
+\begin{aligned}
+b_n&\stackrel{\text{def}}{=}a_n\\
+b_{n-1}&\stackrel{\text{def}}{=}a_{n-1}+b_nx_0\\
+&\ \vdots\\
+b_0&\stackrel{\text{def}}{=}a_0+b_1x_0
 \end{aligned}
 $$
 
