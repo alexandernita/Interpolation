@@ -90,19 +90,17 @@ $$
 Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division is typically used to compute $b_1,\dots, b_n$,
 
 $$
-\begin{array}{cccc}
+\begin{algined}
+&\begin{array}{cccc}
         a_n&\qquad a_{n-1}\qquad &\cdots &a_0\\
         \downarrow&b_n&\cdots&\ast
-\end{array}
-$$
-
-$$\text{---------------------------------}$$
-
-$$
-\begin{array}{cccc}
+\end{array}\\
+&\text{---------------------------------}\\
+&\begin{array}{cccc}
 a_n&a_{n-1}+b_nx_0&\cdots&\ast\\
         =b_n&=b_{n-1}&\cdots&=b_0
 \end{array}
+\end{aligned}
 $$
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
