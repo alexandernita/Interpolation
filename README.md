@@ -66,7 +66,7 @@ The **generalized Rolle theorem** says
 
 * If $f\in C^n([a,b])$ and if $f(x_i)=0$ for all $a\leq x_0< x_1<\cdots< x_n\leq b$, then $\exists c\in (x_0,x_n)\subseteq [a,b]$ for which $f^{(n)}(c)=0$.  
 
-and using this it can be shown&ndash;using $g(t)=f(t)-p(t)-(f(x)-p(x))\prod_{i=0}^n\frac{(t-x_i)}{(x-x_i)})$&ndash;that $\exists c\in (a,b)$ for which 
+and using this it can be shown&ndash;&ndash;using $g(t)=f(t)-p(t)-(f(x)-p(x))\prod_{i=0}^n\frac{(t-x_i)}{(x-x_i)})$&ndash;&ndash;that $\exists c\in (a,b)$ for which 
 
 $$
 f(x)-p(x)=\frac{f^{(n+1)(c)}}{(n+1)!}\prod_{i=0}^n(x-x_i)
