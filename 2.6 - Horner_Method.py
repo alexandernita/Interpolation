@@ -1,8 +1,8 @@
-3# Horner's Method:  p(x) = 2x^4 - 3x^2 + 3x - 4.  What is p(-2)?
+3# Horner's Method:  if e.g. p(x) = 2x^4 - 3x^2 + 3x - 4, what is p(-2)? Except we'll make it interactive.
 
 
-n = int(input("What is the degree of the polynomial p(x)?\n"))
-prompt1="Enter the coefficients of p(x), in decreasing order starting with a_n, a_n-1,...\n"
+n = int(input("\n What is the degree of the polynomial p(x)?\n\n"))
+prompt1="\n Enter the coefficients of p(x), in decreasing order starting with a_n, a_n-1,...\n\n"
 print(prompt1)
 
 # Make the lists with coefficient names a_k and b_k
@@ -23,7 +23,7 @@ for i in range(0,l):
     A.append(float(input(d)))
 
 # Prompt to enter the specific x-value x0                
-x0 = float(input("Enter the x-value at which you would like to evaluate p(x).  x0 = \n"))
+x0 = float(input("\n Enter the x-value at which you would like to evaluate p(x).  \n x0 = \n\n"))
 
 # Use the list A and x0 to plug into Horner's method, and generate the b_k's
 B = [A[0]]
@@ -44,4 +44,4 @@ for x,y in zip(C,B):
 print("")
 print("And we remember, of course, that b_0 = p(x_0).")
 print("")
-print("Let's verify:  p(x_0) = ",p)
+print("Let's verify by direct computation:  p(x_0) = ",p)

@@ -21,7 +21,7 @@ p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x),
 \quad \text{where}\quad L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
 $$
 
-is the *unique degree* $n$ polynomials passing through the $n+1$ points, since 
+is the *unique degree* $n$ polynomial passing through the $n+1$ points, since 
 
 $$
 L_i(x_j)=
@@ -61,11 +61,25 @@ The **generalized Rolle theorem** says
 
 * If $f\in C^n([a,b])$ and if $f(x_i)=0$ for all $a\leq x_0< x_1<\cdots< x_n\leq b$, then $\exists c\in (x_0,x_n)\subseteq [a,b]$ for which $f^{(n)}(c)=0$.  
 
-and using this it can be shown---using $g(t)=f(t)-p(t)-(f(x)-p(x))\prod_{i=0}^n\frac{(t-x_i)}{(x-x_i)})$---that $\exists c\in (a,b)$ for which 
+Using this we can show---using the function $g(t)=f(t)-p(t)-(f(x)-p(x))\prod_{i=0}^n\frac{(t-x_i)}{(x-x_i)})$---that $\exists c\in (a,b)$ for which 
 
 $$
 f(x)-p(x)=\frac{f^{(n+1)(c)}}{(n+1)!}\prod_{i=0}^n(x-x_i)
 $$
+
+Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomial $p(x)$ gives a pretty good approximation to $f(x)$ for *any* $x\in [a,b]$, and clearly more accurately with greater $n$ (which makes $\delta x=\max_i |x-x_i|$ smaller).  
+
+### Computating $y$-Values of Lagrange Polynomials 
+
+Evaluating a polynomial $p(x)=\sum_{k=0}^n a_kx^k$ with known coefficients $a_k$ at a point $x=x_0$ can be done directly with a single for loop:  
+
+```
+A=[a_n,...,a_1,a_0]
+
+p = 0
+for i in range(0,n+1):
+    p = p+A[n-i]*x0**i
+```
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
