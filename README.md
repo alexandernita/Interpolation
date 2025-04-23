@@ -93,18 +93,11 @@ $$
 \begin{array}{cccc}
         a_n&a_{n-1}&\cdots &a_0\\
         \downarrow&b_n&\cdots&\ast\\
-        \hline 
-        b_n=a_n&b_{n-1}=a_{n-1}+b_nx_0&\cdots&\ast&b_0
+        &&&\\ 
+        a_n&a_{n-1}+b_nx_0&\cdots&&\ast\\
+        =b_n&=b_{n-1}&\cdots&=b_0
 \end{array}
 $$
-
-
-and
-
-| command  | description  |
-|--------  |------------  |
-| alpha    | so and so    |
-| beta     | so and so    | 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
