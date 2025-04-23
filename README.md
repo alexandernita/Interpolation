@@ -20,5 +20,13 @@ $L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}$
 
 satisfies $L_i(x_j)=\left\{\begin{array}{ll}0,& i\neq j\ 1,&i=j\end{array}\rignt.$.  Hence, $f(x_j)L_i(x_j)=\left\{\begin{array}{ll}0,& i\neq j\ f(x_j),&i=j\end{array}\right.$.  
 
+$$
+f(x)=
+\begin{cases}
+1/d_{ij} & \quad \text{when $d_{ij} \leq 160$}\\ 
+0 & \quad \text{otherwise}
+\end{cases}
+$$
+
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
