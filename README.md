@@ -93,7 +93,7 @@ $$
 \begin{array}{c|rrr}
         &1&2&1\\
      -1 &&-1&-1\\
-        \hline\\
+        \hline
         &1&1&0
 \end{array}
 $$
