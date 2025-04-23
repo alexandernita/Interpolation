@@ -6,11 +6,17 @@ There is a theoretical justification for this optimism in the form of the **Weie
 
 $\forall f\in C([a,b]),\ \forall \varepsilon>0,\ \exists p\in \mathbb{R}[a,b],\ \lVert f-p\rVert_\infty<\varepsilon$  
 
-This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we are using a single polynomial *on the dataset*, then we need $p$ to pass *through* those $n+1$ points, and this puts a hefty restriction on $f$, which then needs to belong to $C^{n+1}([a,b])$.  This is one reason to consider *piecewise* interpolants, which make no demands on $f$ other than continuity.  Instead, the derivation of algorithms for finding piecewise interpolants is harder.  
+This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we are using a single polynomial *on the dataset*, then we need $p$ to pass *through* those $n+1$ points in $[a,b]$, and this puts a hefty restriction on $f$, which then needs to belong to $C^{n+1}([a,b])$.  This is one reason to consider *piecewise* interpolants, which make no demands on $f$ other than continuity.  Instead, we pay a heavier price to derive the algorithms for the interpolants.  
 
 ## Single Polynomial Interpolation of $n+1$ Data Points
 
-Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  
+Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The **Lagrange polynomial** 
+
+$p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)$
+
+is the *unique degree* $n$ polynomials passing through the $n+1$ points, where
+
+$L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}$
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
