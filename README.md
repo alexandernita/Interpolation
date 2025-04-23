@@ -81,5 +81,17 @@ for i in range(0,n+1):
     p = p+A[n-i]*x0**i
 ```
 
+**Horner's method** uses polynomial division.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the quotient polynomial, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
+
+$$
+p(x)=(x-x_0)q(x)+b_0
+$$
+
+Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division is typically used to compute $b_1,\dots, b_n$,
+
+$$
+\begin{array}{c|rrr}&1&2&1\\-1&&-1&-1\\\hline\\&1&1&0\\\end{array}
+$$
+
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
