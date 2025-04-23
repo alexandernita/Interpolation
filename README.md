@@ -32,7 +32,7 @@ L_i(x_j)=
 0,& \text{if }i\neq j\\ 
 1,& \text{if }i=j\\
 \end{cases}
-\ \implies\ 
+\quad\implies\quad
 f(x_j)L_i(x_j)=
 \begin{cases}
 0,& \text{if }i\neq j\\ 
@@ -40,15 +40,21 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
-For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, a degree $1$ polynomial is the line through the two points, 
+For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the $1$st Lagrange polynomial is the *unique line through the two points*, 
+
+$$
+p(x)    = f(x_0)L_0(x)+f(x_1)L_1(x)
+        = f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
+$$
+
+while if we have three data points ($n=2$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, $(x_2,f(x_2))$, then the $2$nd Lagrange polynomial is the *unique parabola passing through the three points*,
 
 $$
 \begin{aligned}
-p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)\\
-        &= f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
+p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)+f(x_2)L_2(x)\\
+        &= f(x_0)\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f(x_1)\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f(x_2)\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
 \end{aligned}
 $$
-
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
