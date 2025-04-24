@@ -87,7 +87,7 @@ $$
 p(x)=(x-x_0)q(x)+b_0
 $$
 
-Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
+The most basic fact about this is $p(x_0)=0q(x_0)+b_0=b_0$, so *the remainder term $b_0$ is our desired $y$-value*.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
 
 $$
 \begin{aligned}
@@ -118,6 +118,7 @@ This can be done with a for loop
 A = [a_n,...,a_1,a_0]
 B = [A[0]]
 l = len(A)
+
 for i in range(0,l-1):
     b = B[i]
     B.append(A[i+1]+b*x0)
