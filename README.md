@@ -74,20 +74,20 @@ Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomi
 Evaluating a polynomial $p(x)=\sum_{k=0}^n a_kx^k$ with known coefficients $a_k$ at a point $x=x_0$ can be done directly with a single for loop:  
 
 ```
-A=[a_n,...,a_1,a_0]
+A = [a_n,...,a_1,a_0]
 
 p = 0
 for i in range(0,n+1):
     p = p+A[n-i]*x0**i
 ```
 
-**Horner's method** uses polynomial division.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the quotient polynomial, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
+**Horner's method** uses polynomial division.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the **quotient polynomial**, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
 
 $$
 p(x)=(x-x_0)q(x)+b_0
 $$
 
-Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, synthetic division is typically used to compute $b_1,\dots, b_n$,
+Then clearly $p(x_0)=0q(x_0)+b_0=b_0$.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
 
 $$
 \begin{aligned}
@@ -102,7 +102,7 @@ $$
 \end{array}
 \end{aligned}
 $$
-but the underlying idea, which is what we need to code, anyway, is 
+but the underlying idea, which is what we need to code, anyway, is to define the $b_k$ recursively
 $$
 \begin{aligned}
 b_n&\stackrel{\text{def}}{=}a_n\\
@@ -111,6 +111,16 @@ b_{n-1}&\stackrel{\text{def}}{=}a_{n-1}+b_nx_0\\
 b_0&\stackrel{\text{def}}{=}a_0+b_1x_0
 \end{aligned}
 $$
+This can be done with a for loop
+
+```
+A = [a_n,...,a_1,a_0]
+B = [A[0]]
+l = len(A)
+for i in range(0,l-1):
+    b = B[i]
+    B.append(A[i+1]+b*x0)
+```
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
