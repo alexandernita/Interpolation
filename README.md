@@ -126,7 +126,24 @@ for i in range(0,l-1):
 
 Then our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  
 
-This shows that, once we have our Lagrange polynomial $p(x)$, there are easy methods ready to hand to compute its $y$-value at any $x$-value in $[a,b]$.  However, computing the coefficients of $p(x)$ from its definition is a tedious matter involving much FOILing.  Of course, 
+This shows that, once we have our Lagrange polynomial $p(x)$, there are easy methods ready to hand to compute its $y$-value at any $x$-value in $[a,b]$.  However, computing the coefficients of $p(x)$ from its definition is a tedious matter involving much FOILing.  Of course, we can also compute the Lagrange polynomial's $y$-value $p(x)$ directly using nested for loops,
+
+```
+A = [a_n,...,a_1,a_0]
+x = [x0,x1,...,xn] 
+xp = input x-value where to evaluate
+yp = 0
+
+for i in range(n):
+    p = 1
+
+    for j in range(n):
+        if i != j:
+            p = p * (xp - x[j])/(x[i] - x[j])
+    
+    yp = yp + p * y[i]    
+
+```
 
 Fortunately, there is a method to compute $p(x_0)$ without first computing coefficients, called **Neville's method**
 
