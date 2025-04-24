@@ -151,11 +151,11 @@ for i in range(n):
 
 ```
 
-#### Neville's Method using Newton's Divided Differences.  
+#### Using Newton's Divided Differences to Find Lagrange Coefficients
 
 Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
 
-If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ called **Neville's method**, which uses Newton's **divided differences**, 
+If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ 
 
 $$
 \begin{aligned}
@@ -173,6 +173,21 @@ a_0&=f[x_0]\\
 a_1&=f[x_0,x_1]\\
 a_k&=f[x_0,\dots,x_k]
 \end{aligned}
+$$
+
+#### Neville's Method
+
+**Neville's method** uses different $k$th Lagrange polynomials, $k=0,\dots,n$, interpolating any $k$ of the data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, to recursively compute $p(x)$, the $n$th Lagrange polynomial, at a given $x\in [a,b]$.  Define the degree $n-1$ polynomial
+
+$$
+p_{\hat{i}}(x)=\sum_{\substack{j=0\\j\neq i}}^nf(x_j)\prod_{\substack{k=0\\k\neq j}}^n\frac{x-x_j}{x_k-x_j}
+$$
+
+Then, for any $i\neq j$ it is straightforward to show
+
+$$
+p(x)=
+\frac{(x-x_j)p_{\hat{j}(x)}-(x-x_i)p_{\hat{i}(x)}}{x_i-x_j}
 $$
 
 
