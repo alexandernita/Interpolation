@@ -111,6 +111,7 @@ b_{n-1}&\stackrel{\text{def}}{=}a_{n-1}+b_nx_0\\
 b_0&\stackrel{\text{def}}{=}a_0+b_1x_0
 \end{aligned}
 $$
+
 This can be done with a for loop
 
 ```
