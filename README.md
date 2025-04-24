@@ -156,6 +156,7 @@ for i in range(n):
 Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
 
 If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ called **Neville's method**, which uses Newton's **divided differences**, 
+
 $$
 \begin{aligned}
 &f[x_i]=f(x_i)  &\text{zeroth divided difference}\\
@@ -163,7 +164,9 @@ $$
 &f[x_i,\dots,x_{i+k}]=\frac{f[x_{i+1},\dots,x_{i+k}]-f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}&\text{$k$th divided difference}
 \end{aligned}
 $$
+
 In fact, since $f(x_i)=p(x_i)$ for all $i$, we can recursively solve for the $a_i$,
+
 $$
 \begin{aligned}
 a_0&=f[x_0]\\
