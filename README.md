@@ -71,6 +71,8 @@ Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomi
 
 ### Computating $y$-Values of Lagrange Polynomials 
 
+#### Generic Polynomial Evaluation
+
 Evaluating a polynomial $p(x)=\sum_{k=0}^n a_kx^k$ with known coefficients $a_k$ at a point $x=x_0$ can be done directly with a single for loop:  
 
 ```
@@ -80,6 +82,8 @@ p = 0
 for i in range(0,n+1):
     p = p+A[n-i]*x0**i
 ```
+
+#### Horner's Method 
 
 **Horner's method** uses polynomial division.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the **quotient polynomial**, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
 
@@ -124,9 +128,11 @@ for i in range(0,l-1):
     B.append(A[i+1]+b*x0)
 ```
 
-Then our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  
+Our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  
 
-This shows that, once we have our Lagrange polynomial $p(x)$, there are easy methods ready to hand to compute its $y$-value at any $x$-value in $[a,b]$.  However, computing the coefficients of $p(x)$ from its definition is a tedious matter involving much FOILing.  Of course, we can also compute the Lagrange polynomial's $y$-value $p(x)$ directly using nested for loops,
+#### Direct Evaluation of Lagrange Polynomials
+
+We can also simply **compute the Lagrange polynomial's $y$-value $p(x)$ directly** using nested for loops,
 
 ```
 A = [a_n,...,a_1,a_0]
@@ -145,7 +151,27 @@ for i in range(n):
 
 ```
 
-Fortunately, there is a method to compute $p(x_0)$ without first computing coefficients, called **Neville's method**
+#### Neville's Method using Newton's Divided Differences.  
+
+Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
+
+If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ called **Neville's method**, which uses Newton's **divided differences**, 
+$$
+\begin{aligned}
+&f[x_i]=f(x_i)  &\text{zeroth divided difference}\\
+&f[x_i,x_{i+1}]=\frac{f[x_{i+1}]-f[x_i]}{x_{i+1}-x_i} &\text{first divided difference}\\
+&f[x_i,\dots,x_{i+k}]=\frac{f[x_{i+1},\dots,x_{i+k}]-f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}&\text{$k$th divided difference}
+\end{aligned}
+$$
+In fact, since $f(x_i)=p(x_i)$ for all $i$, we can recursively solve for the $a_i$,
+$$
+\begin{aligned}
+a_0&=f[x_0]\\
+a_1&=f[x_0,x_1]\\
+a_k&=f[x_0,\dots,x_k]
+\end{aligned}
+$$
+
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
