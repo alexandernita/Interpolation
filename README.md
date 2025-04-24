@@ -67,7 +67,7 @@ $$
 f(x)-p(x)=\frac{f^{(n+1)(c)}}{(n+1)!}\prod_{i=0}^n(x-x_i)
 $$
 
-Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomial $p(x)$ gives a pretty good approximation to $f(x)$ for *any* $x\in [a,b]$, and clearly more accurately with greater $n$ (which makes $\delta x=\max_i |x-x_i|$ smaller).  
+Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomial $p(x)$ gives a pretty good approximation to $f(x)$ for *any* $x\in [a,b]$, and clearly more accurately with greater $n$ (which makes $\Delta x=\max_i |x_i-x_{i-1}|$ smaller).  
 
 ### Computating $y$-Values of Lagrange Polynomials 
 
@@ -125,6 +125,10 @@ for i in range(0,l-1):
 ```
 
 Then our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  
+
+This shows that, once we have our Lagrange polynomial $p(x)$, there are easy methods ready to hand to compute its $y$-value at any $x$-value in $[a,b]$.  However, computing the coefficients of $p(x)$ from its definition is a tedious matter involving much FOILing.  Of course, 
+
+Fortunately, there is a method to compute $p(x_0)$ without first computing coefficients, called **Neville's method**
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 

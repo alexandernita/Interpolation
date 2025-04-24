@@ -1,4 +1,4 @@
-# Horner's Method:  if e.g. p(x) = 2x^4 - 3x^2 + 3x - 4, what is p(-2)? Except we'll make it interactive.
+3# Horner's Method:  if e.g. p(x) = 2x^4 - 3x^2 + 3x - 4, what is p(-2)? Except we'll make it interactive.
 
 
 n = int(input("\n What is the degree of the polynomial p(x)?\n\n"))
@@ -36,7 +36,6 @@ for i in range(0,l-1):
 p = 0
 for i in range(0,n+1):
     p = p+A[n-i]*x0**i
-    
 print("")
 print("The coefficients b1,...b_n of the qotient polynomial q(x),")
 print("satisfying p(x)=(x-x_0)q(x)+b_0, and b_0=p(x_0) itself, are")
