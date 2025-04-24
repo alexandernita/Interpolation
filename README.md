@@ -14,7 +14,7 @@ This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we
 
 ### Lagrange Polynomial Interpolation 
 
-Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The **$n$th Lagrange polynomial** 
+Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The $n\text{th}$ **Lagrange polynomial** 
 
 $$
 p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x),
