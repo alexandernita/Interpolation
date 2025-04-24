@@ -180,7 +180,7 @@ $$
 **Neville's method** uses different $k$th Lagrange polynomials, $k=0,\dots,n$, interpolating any $k$ of the data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, to recursively compute $p(x)$, the $n$th Lagrange polynomial, at a given $x\in [a,b]$.  Define the degree $n-1$ polynomial
 
 $$
-p_{\hat{i}}(x)=\sum_{{j=0\ j\neq i}}^nf(x_j)\prod_{k=0\ k\neq j}^n\frac{x-x_j}{x_k-x_j}
+p_{\hat{i}}(x)=\sum_{{j=0\\ j\neq i}}^nf(x_j)\prod_{k=0\\ k\neq j}^n\frac{x-x_j}{x_k-x_j}
 $$
 
 Then, for any $i\neq j$ it is straightforward to show
