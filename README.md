@@ -124,5 +124,7 @@ for i in range(0,l-1):
     B.append(A[i+1]+b*x0)
 ```
 
+Then our desired $y$-value $p(x_0)$ is $b_0=B[n]$.  
+
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
