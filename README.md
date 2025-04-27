@@ -91,7 +91,7 @@ $$
 p(x)=(x-x_0)q(x)+b_0
 $$
 
-The most basic fact about this is $p(x_0)=0q(x_0)+b_0=b_0$, so *the remainder term $b_0$ is our desired $y$-value*.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
+The most basic fact about this is $p(x_0)=0q(x_0)+b_0=b_0$, so *the remainder term* $b_0$ *is our desired* $y$-*value*.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
 
 $$
 \begin{aligned}
