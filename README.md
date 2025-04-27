@@ -194,11 +194,11 @@ This works more generally for any $k\in \\{1,\dots, n\\}$, and so allows for a r
 
 $$
 \begin{aligned}
-x_0     &p_0    &               &               &               &\\
-x_1     &p_1    &p_{0,1}        &               &               &\\
-x_2     &p_2    &p_{1,2}        &p_{0,1,2}      &               &\\
-x_3     &p_3    &p_{2,3}        &p_{1,2,3}      &p_{0,1,2,3}    &\\
-x_4     &p_4    &p_{3,4}        &p_{2,3,4}      &p_{1,2,3,4}    &p_{0,1,2,3,4}\equiv p
+x_0\equiv       &p_0\quad       &               &               &                       &\\
+x_1\equiv       &p_1\quad       &p_{0,1}\quad   &               &                       &\\
+x_2\equiv       &p_2\quad       &p_{1,2}\quad   &p_{0,1,2}\quad &                       &\\
+x_3\equiv       &p_3\quad       &p_{2,3}\quad   &p_{1,2,3}\quad &p_{0,1,2,3}\quad       &\\
+x_4\equiv       &p_4\quad       &p_{3,4}\quad   &p_{2,3,4}\quad &p_{1,2,3,4}\quad       &p_{0,1,2,3,4}\equiv p
 \end{aligned}
 $$
 
