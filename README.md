@@ -190,12 +190,17 @@ p(x)=
 \frac{(x-x_j)p_{\hat{j}}(x)-(x-x_i)p_{\hat{i}}(x)}{x_i-x_j}
 $$
 
-This works more generally for any $1\leq k\leq n$, and so allows for a recursion algorithm:  for any multi-index $I_k=\\{i_1<\cdots<i_k\\}$, let $J_k=\\{j_1<\cdots<j_{n-k}\ :\ j_\ell\notin I_k\\}$, and let $p_{I_k}$ be the $k\text{th}$ Lagrange polynomial through $(x_{i_1},f(x_{i_1})),\dots, (x_{i_k},f(x_{i_k}))$, and $p_{J_k}$ the $(n-k)\text{th}$ Lagrange polynomial through the remaining points, so that $p_{\hat{i}}=p_{J_{n-1}}$, where $J_{n-1}=\\{i\\}$.
+This works more generally for any $k\in \\{1,\dots, n\\}$, and so allows for a recursion algorithm:  for any multi-index $I_k=\\{i_1<\cdots<i_k\\}$, let $J_k=\\{j_1<\cdots<j_{n-k}\ :\ j_\ell\notin I_k\\}$ be its complement, and let $p_{I_k}$ be the $k\text{th}$ Lagrange polynomial through $(x_{i_1},f(x_{i_1})),\dots, (x_{i_k},f(x_{i_k}))$, and $p_{J_k}$ the $(n-k)\text{th}$ Lagrange polynomial through the remaining points (so that $p_{\hat{i}}=p_{J_{n-1}}$ with $J_{n-1}=\\{i\\}$).  Thinking of $p_i$ as the single value $x_i$, we can recursively compute $p_{I_k}$ in the following order, if, say, $n=4$
 
 $$
-p_{I_k}=
+\begin{aligned}
+x_0     &p_0    &               &               &               &\\
+x_1     &p_1    &p_{0,1}        &               &               &\\
+x_2     &p_2    &p_{1,2}        &p_{0,1,2}      &               &\\
+x_3     &p_3    &p_{2,3}        &p_{1,2,3}      &p_{0,1,2,3}    &\\
+x_4     &p_4    &p_{3,4}        &p_{2,3,4}      &p_{1,2,3,4}    &p_{0,1,2,3,4}\equiv p
+\end{aligned}
 $$
-
 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
