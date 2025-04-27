@@ -192,7 +192,7 @@ p(x)=
 \frac{(x-x_j)p_{\hat{j}}(x)-(x-x_i)p_{\hat{i}}(x)}{x_i-x_j}
 $$
 
-This works more generally for any $k\in \\{1,\dots, n\\}$, and so allows for a **recursion algorithm**:  for any multi-index $I_k=\\{i_1<\cdots<i_k\\}$, let $J_k=\\{j_1<\cdots<j_{n-k}\ :\ j_\ell\notin I_k\\}$ be its complement, and let $p_{I_k}$ be the $k\text{th}$ Lagrange polynomial through $(x_{i_1},f(x_{i_1})),\dots, (x_{i_k},f(x_{i_k}))$, and $p_{J_k}$ the $(n-k)\text{th}$ Lagrange polynomial through the remaining points (so that $p_{\hat{i}}=p_{J_{n-1}}$ with $J_{n-1}=\\{i\\}$).  Thinking of $p_i$ as the single value $x_i$, we can recursively compute $p_{I_k}$ in the following order, if, say, $n=4$
+This works more generally for any $k\in \\{1,\dots, n\\}$, and so allows for a **recursion algorithm**:  for any multi-index $I_k=\\{i_1<\cdots<i_k\\}$ and let $p_{I_k}$ be the $k\text{th}$ Lagrange polynomial through $(x_{i_1},f(x_{i_1})),\dots, (x_{i_k},f(x_{i_k}))$.  Thinking of $p_i$ as the single value $x_i$, we can recursively compute $p_{I_k}$ in the following order (in the case $n=4$)
 
 $$
 \begin{aligned}
@@ -209,11 +209,30 @@ where e.g.
 $$
 \begin{aligned}
 &p_{0,1}(x)=\frac{(x-x_0)p_1(x)-(x-x_1)p_0(x)}{x_1-x_0}\\
-&p_{2,3,4}=\frac{(x-x_2)p_{3,4}(x)-(x-x_4)p_{2,3}}{x_4-x_2}
+&p_{2,3,4}=\frac{(x-x_2)p_{3,4}(x)-(x-x_4)p_{2,3}(x)}{x_4-x_2}
 \end{aligned}
 $$
 
-In the python file 03-Neville_Method.py we illustrate this for $5$ data points ($n=4$, as above) from the graph of $f(x)=3^x$, evaluating $p(x)=p_{0,1,2,3,4}(x)$ at $x=0.5$, the bottom-right term in the array above.  
+In the python file 03-Neville_Method.py we illustrate this algorightm using $5$ data points ($n=4$) from the graph of $f(x)=3^x$, evaluating $p(x)=p_{0,1,2,3,4}(x)$ at $x=0.5$, which is the bottom-right term in the array above.  A $2$-dimensional array can be produced by two nested for loops.
+
+```
+x = [x_0, x_1, x_2, x_3, x_4]   # our given x-values
+
+xp = 0.5
+yp = 0
+
+# Implement Neville's Method
+for i in range(1,n):
+    for j in range(i,n):
+        xi = x[j]
+        xij = x[j-i]
+        Qij = Q[i]
+        R = Q[i-1]
+        s = ((xp-xij)*R[j-i+1]-(xp-xi)*R[j-i])/(xi-xij)
+        Qij.append(s)
+    Q[i]=Qij
+
+```
 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
