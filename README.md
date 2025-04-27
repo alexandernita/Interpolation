@@ -218,10 +218,9 @@ In the python file 03-Neville_Method.py we illustrate this algorightm using $5$ 
 ```
 x = [x_0, x_1, x_2, x_3, x_4]   # our given x-values
 
-xp = 0.5
-yp = 0
+xp = 0.5 # the x-value at which we want to evaluate p(x)
 
-# Implement Neville's Method
+# Neville's Method
 for i in range(1,n):
     for j in range(i,n):
         xi = x[j]
@@ -231,7 +230,6 @@ for i in range(1,n):
         s = ((xp-xij)*R[j-i+1]-(xp-xi)*R[j-i])/(xi-xij)
         Qij.append(s)
     Q[i]=Qij
-
 ```
 
 

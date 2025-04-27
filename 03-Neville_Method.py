@@ -19,11 +19,10 @@ y = [f(x[i]) for i in range(len(x))]
 # store y-value and declare x-value at which to evaluate p(x) 
 Q[0] = y
 
-xp = 0.5
+# the x-value at which we want to evaluate p(x)
+xp = 0.5 
 
-# Set interpolated value initially to zero
-# yp = 0
-
+# print title and data points
 print("\n\tExercise 3.2.3 (a), Neville's Method:")
 print("\n\tGiven %d"%n,"data points on the graph of f,")
 print("\n\t x\t f(x) = 3^x")
@@ -33,7 +32,7 @@ for i in range(len(x)):
 print("\n\tthe degree -1+%d"%n,"Lagrange interpolating polynomial")
 print("\tapproximates f(%0.1f)"%xp,"by the value in the bottom right.\n")
 
-# Implement Neville's Method
+# implement Neville's Method
 for i in range(1,n):
     for j in range(i,n):
         xi = x[j]
@@ -44,7 +43,7 @@ for i in range(1,n):
         Qij.append(s)
     Q[i]=Qij
 
-# Display output
+# display output
 for i in range(n):
     T = ["" for k in range(i)]
     Q[i]=T+Q[i]
