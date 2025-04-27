@@ -44,16 +44,19 @@ for i in range(1,n):
     Q[i]=Qij
 
 # display output
+# add zeros to the beginning of all the Q[i] vectors
 for i in range(n):
     T = ["" for k in range(i)]
     Q[i]=T+Q[i]
 
+# transpose Q, so that it sits right
 S = [[] for i in range(n)]
 
 for i in range(n):
     for j in range(n):
         S[i].append(Q[j][i])
 
+# print out S=transpose(Q)
 for i in range(n):
     print("\t",format(S[i][0], ".7f") if type(S[i][0])==float else "",\
           "\t",format(S[i][1], ".7f") if type(S[i][1])==float else "",\
@@ -61,6 +64,7 @@ for i in range(n):
           "\t",format(S[i][3], ".7f") if type(S[i][3])==float else "",\
           "\t",format(S[i][4], ".7f") if type(S[i][4])==float else "")
 
+# error analysis 
 pxp = S[n-1][n-1]
 fp = f(xp)
 Ep = abs(pxp - fp)

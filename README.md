@@ -91,7 +91,7 @@ $$
 p(x)=(x-x_0)q(x)+b_0
 $$
 
-The most basic fact about this is $p(x_0)=0q(x_0)+b_0=b_0$, so *the remainder term* $b_0$ *is our desired* $y$-*value*.  When working by hand, **synthetic division** is typically used to compute $b_1,\dots, b_n$,
+The most basic fact about this is $p(x_0)=0q(x_0)+b_0=b_0$, so *the remainder term* $b_0$ *is our desired* $y$-*value*.  When working by hand, **synthetic division** is typically used to compute $b_0,\dots, b_n$,
 
 $$
 \begin{aligned}
@@ -128,7 +128,7 @@ for i in range(0,l-1):
     B.append(A[i+1]+b*x0)
 ```
 
-Our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  
+Our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  See the 01-Horner_Method.py file for an example.  
 
 #### Direct Evaluation of Lagrange Polynomials
 
@@ -234,6 +234,8 @@ for i in range(1,n):                    # Neville's Method
         Qij.append(s)
     Q[i]=Qij
 ```
+
+Starting with $i=1$, the inner for loop (running $j$ through $\\{1,2,3,4\\}$) produces the second column vector, $\begin{pmatrix}p_{0,1}\\ p_{1,2}\\ p_{2,3}\\ p_{3,4}\end{pmatrix}$ in the array.  Moving to $i=2$, we get column 3, etc. 
 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
