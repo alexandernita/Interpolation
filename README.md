@@ -216,16 +216,19 @@ $$
 In the python file 03-Neville_Method.py we illustrate this algorightm using $5$ data points ($n=4$) from the graph of $f(x)=3^x$, evaluating $p(x)=p_{0,1,2,3,4}(x)$ at $x=0.5$, which is the bottom-right term in the array above.  A $2$-dimensional array can be produced by two nested for loops.
 
 ```
-x = [x_0, x_1, x_2, x_3, x_4]   # our given x-values
+x = [x_0, x_1, x_2, x_3, x_4]           # our given x-values
+xp = 0.5                                # the x-value at which we want to evaluate p(x)
+n = len(x)                              # this n is different, it equals our n+1 = 5
+y = [f(x[i]) for i in range(len(x))]    # our function's corresponding y-values
 
-xp = 0.5 # the x-value at which we want to evaluate p(x)
+Q = [[] for i in range(n)]              # create empty n x (n+1) array
+Q[0] = y                                # let y be column 1
 
-# Neville's Method
-for i in range(1,n):
+for i in range(1,n):                    # Neville's Method
     for j in range(i,n):
-        xi = x[j]
-        xij = x[j-i]
-        Qij = Q[i]
+        xi = x[j]                       # x_i to x_{n-1}
+        xij = x[j-i]                    # x_0 to x_{n-i}
+        Qij = Q[i]                      
         R = Q[i-1]
         s = ((xp-xij)*R[j-i+1]-(xp-xi)*R[j-i])/(xi-xij)
         Qij.append(s)
