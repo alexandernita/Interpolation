@@ -177,7 +177,7 @@ $$
 
 #### Neville's Method
 
-**Neville's method** uses different $k\text{th}$ Lagrange polynomials, $k=0,\dots,n$, interpolating any $k$ of the data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, to recursively compute $p(x)$, the $n\text{th}$ Lagrange polynomial, at a given $x\in [a,b]$.  Define the degree $n-1$ polynomial
+**Neville's method** uses different $k\text{th}$ Lagrange polynomials, $k=0,\dots,n$, interpolating any $k$ of the data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, to **recursively compute** $p(x)$, the $n\text{th}$ **Lagrange polynomial**, at a given $x\in [a,b]$, from all $k\text{th}$ order Lagrange polynomials as $k$ goes from $1$ to $n-1$.  Define the degree $n-1$ polynomial
 
 $$
 p_{\hat{i}}(x)=\sum_{{j=0, j\neq i}}^nf(x_j)\prod_{k=0, k\neq j}^n\frac{x-x_j}{x_k-x_j}
@@ -188,6 +188,12 @@ Then, for any $i\neq j$ it is straightforward to show
 $$
 p(x)=
 \frac{(x-x_j)p_{\hat{j}}(x)-(x-x_i)p_{\hat{i}}(x)}{x_i-x_j}
+$$
+
+This works more generally for any $1\leq k\leq n$, and so allows for a recursion algorithm:  for any multi-index $I_k=`\{i_1<\cdots<i_k `\}`\|$, let $J_k=`\{j_1<\ccdots<j_{n-k}`\::`\:j_\ell\notin I_k`\}$
+
+$$
+p_{I_k}
 $$
 
 
