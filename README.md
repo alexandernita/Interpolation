@@ -67,7 +67,7 @@ $$
 f(x)-p(x)=\frac{f^{(n+1)(c)}}{(n+1)!}\prod_{i=0}^n(x-x_i)
 $$
 
-Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomial $p(x)$ gives a pretty good approximation to $f(x)$ for *any* $x\in [a,b]$, and clearly more accurately with greater $n$ (which makes $\Delta x=\max_i |x_i-x_{i-1}|$ smaller).  
+Then the RHS can be maximized over $[a,b]$.  For $n\geq 4$ the Lagrange polynomial $p(x)$ gives a pretty good approximation to $f(x)$ for *any* $x\in [a,b]$, and clearly more accurately with greater $n$ (which makes $\Delta x=\max_i |x_i-x_{i-1}|$ and $1/(n+1)!$ smaller).  
 
 ### Computating $y$-Values of Lagrange Polynomials 
 
