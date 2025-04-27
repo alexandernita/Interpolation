@@ -190,7 +190,7 @@ p(x)=
 \frac{(x-x_j)p_{\hat{j}}(x)-(x-x_i)p_{\hat{i}}(x)}{x_i-x_j}
 $$
 
-This works more generally for any $1\leq k\leq n$, and so allows for a recursion algorithm:  for any multi-index $I_k=${$i_1<\cdots<i_k$}, let $J_k=${$j_1<\ccdots<j_{n-k}\ :\ j_\ell\notin I_k$}
+This works more generally for any $1\leq k\leq n$, and so allows for a recursion algorithm:  for any multi-index $I_k=\\{i_1<\cdots<i_k$\\}, let $J_k=\\{j_1<\ccdots<j_{n-k}\ :\ j_\ell\notin I_k\\}$
 
 $$
 p_{I_k}
