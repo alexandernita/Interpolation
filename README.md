@@ -204,14 +204,7 @@ x_4\equiv       &p_4\quad       &p_{3,4}\quad   &p_{2,3,4}\quad &p_{1,2,3,4}\qua
 \end{aligned}
 $$
 
-where e.g.
-
-$$
-\begin{aligned}
-&p_{0,1}(x)=\frac{(x-x_0)p_1(x)-(x-x_1)p_0(x)}{x_1-x_0}\\
-&p_{2,3,4}=\frac{(x-x_2)p_{3,4}(x)-(x-x_4)p_{2,3}(x)}{x_4-x_2}
-\end{aligned}
-$$
+where e.g. $p_{0,1}(x)=\frac{(x-x_0)p_1(x)-(x-x_1)p_0(x)}{x_1-x_0}$ and $p_{2,3,4}=\frac{(x-x_2)p_{3,4}(x)-(x-x_4)p_{2,3}(x)}{x_4-x_2}$.  
 
 In the python file 03-Neville_Method.py we illustrate this algorightm using $5$ data points ($n=4$) from the graph of $f(x)=3^x$, evaluating $p(x)=p_{0,1,2,3,4}(x)$ at $x=0.5$, which is the bottom-right term in the array above.  A $2$-dimensional array can be produced by two nested for loops.
 
@@ -235,7 +228,34 @@ for i in range(1,n):                    # Neville's Method
     Q[i]=Qij
 ```
 
-Starting with $i=1$, the inner for loop (running $j$ through $\\{1,2,3,4\\}$) produces the second column vector, $\langle p_{0,1}, p_{1,2}, p_{2,3}, p_{3,4}\rangle^T$ in the array.  Moving to $i=2$, we get column 3, etc. 
+Starting with $i=1$, the inner for loop (running $j$ through $\\{1,2,3,4\\}$) produces the second column vector, $\langle p_{0,1}, p_{1,2}, p_{2,3}, p_{3,4}\rangle^T$ in the array.  Moving to $i=2$, we get column 3, etc. The output is 
+
+```
+        Given 5 data points on the graph of f,
+
+         x       f(x) = 3^x
+        ------------------------
+         -2.0    0.1111111
+         -1.0    0.3333333
+         0.0     1.0000000
+         1.0     3.0000000
+         2.0     9.0000000
+
+        the degree -1+5 Lagrange interpolating polynomial
+        approximates f(0.5) by the value in the bottom right.
+
+         0.1111111                               
+         0.3333333       0.6666667                       
+         1.0000000       1.3333333       1.5000000               
+         3.0000000       2.0000000       1.8333333       1.7777778       
+         9.0000000       0.0000000       1.5000000       1.6666667       1.7083333
+
+        The approximate and actual values, as well as the error, are:
+
+        p(0.5)          f(0.5)          E(0.5)
+        --------------------------------------
+        1.7083333       1.7320508       0.0237175
+```
 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
