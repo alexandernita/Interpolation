@@ -202,6 +202,15 @@ x_4\equiv       &p_4\quad       &p_{3,4}\quad   &p_{2,3,4}\quad &p_{1,2,3,4}\qua
 \end{aligned}
 $$
 
+where e.g.
+
+$$
+\begin{aligned}
+&p_{0,1}(x)=\frac{(x-x_0)p_1(x)-(x-x_1)p_0(x)}{x_1-x_0}\\
+&p_{2,3,4}=\frac{(x-x_2)p_{3,4}(x)-(x-x_4)p_{2,3}}{x_4-x_2}
+\end{aligned}
+$$
+
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].
 [^2]:  Theorem 7.26 in Rudin's *Principles of Mathematical Analysis*, or Theorem 8.135 in my *Lectures on Real Analysis*. 
