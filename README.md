@@ -153,32 +153,6 @@ for i in range(n):                      # nth Lagrange polynomial evaluated at x
 
 Try the example in the 02-Lagrange_Direct.py file.  
 
-<!--
-#### Using Newton's Divided Differences to Find Lagrange Coefficients
-
-Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
-
-If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ 
-
-$$
-\begin{aligned}
-&f[x_i]=f(x_i)  &\text{zeroth divided difference}\\
-&f[x_i,x_{i+1}]=\frac{f[x_{i+1}]-f[x_i]}{x_{i+1}-x_i} &\text{first divided difference}\\
-&f[x_i,\dots,x_{i+k}]=\frac{f[x_{i+1},\dots,x_{i+k}]-f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}&\text{$k$th divided difference}
-\end{aligned}
-$$
-
-In fact, since $f(x_i)=p(x_i)$ for all $i$, we can recursively solve for the $a_i$,
-
-$$
-\begin{aligned}
-a_0&=f[x_0]\\
-a_1&=f[x_0,x_1]\\
-a_k&=f[x_0,\dots,x_k]
-\end{aligned}
-$$
--->
-
 #### Neville's Method
 
 **Neville's method** uses different $k\text{th}$ Lagrange polynomials, $k=0,\dots,n$, interpolating any $k$ of the data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, to **recursively compute** $p(x)$, the $n\text{th}$ **Lagrange polynomial**, at a given $x\in [a,b]$.  To see how this works, define the degree $n-1$ polynomial
@@ -258,6 +232,95 @@ Starting with $i=1$, the inner for loop (running $j$ through $\\{1,2,3,4\\}$) pr
         --------------------------------------
         1.7083333       1.7320508       0.0237175
 ```
+
+#### Using Newton's Divided Differences to Find Lagrange Coefficients
+
+Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
+
+If we instead write $p(x)$ in the form $p(x)=\sum_{i=0}^n a_i \prod_{j=0}^{i}(x-x_j)$, then there is a method to compute *these* coefficients $a_i$ 
+
+$$
+\begin{aligned}
+&f[x_i]=f(x_i)  &\text{zeroth divided difference}\\
+&f[x_i,x_{i+1}]=\frac{f[x_{i+1}]-f[x_i]}{x_{i+1}-x_i} &\text{first divided difference}\\
+&f[x_i,\dots,x_{i+k}]=\frac{f[x_{i+1},\dots,x_{i+k}]-f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}&\text{$k$th divided difference}
+\end{aligned}
+$$
+
+In fact, since $f(x_i)=p(x_i)$ for all $i$, we can recursively solve for the $a_i$,
+
+$$
+\begin{aligned}
+a_0&=f[x_0]\\
+a_1&=f[x_0,x_1]\\
+a_k&=f[x_0,\dots,x_k]
+\end{aligned}
+$$
+
+The method of computing these is similar to Neville's method, and only takes only minor modifications to that code to produce a similar table, with say $n=4$,
+
+$$
+\begin{aligned}
+x_0\equiv       &f[x_0]\quad    &                    &                       &                          &\\
+x_1\equiv       &f[x_1]\quad    &f[x_0,x_1]\quad     &                       &                          &\\
+x_2\equiv       &f[x_2]\quad    &f[x_1,x_2]\quad     &f[x_0,x_1,x_2]\quad    &                          &\\
+x_3\equiv       &f[x_3]\quad    &f[x_2,x_3]\quad     &f[x_1,x_2,x_3]\quad    &f[x_0,x_1,x_2,x_3]\quad   &\\
+x_4\equiv       &f[x_4]\quad    &f[x_3,x_4]\quad     &f[x_2,x_3,x_4]\quad    &f[x_1,x_2,x_3,x_4]\quad   &f[x_0,x_1,x_2,x_3,x_4]
+\end{aligned}
+$$
+ 
+and the coefficients $a_0,\dots, a_4$ are read off the top diagonal.  A simple for loop then evaluates $p(x)$ at any $x$-value,
+
+```
+y = [y_0,y_1,y_2,y_3,y_4]
+yp = f(xp)
+
+for i in range(1,n):
+    p = 1
+    for j in range(i):
+        p = p*(xp-x[j])
+    yp = yp + y[i]*p
+```
+
+The output of the 04-Newtons_Divided_Differences.py file is 
+
+```
+Newton's Divided Difference Method:
+
+        Given 5 data points on the graph of f,
+
+         x       f(x)
+        -------------------
+         1.0     0.7651977
+         1.3     0.6200860
+         1.6     0.4554022
+         1.9     0.2818186
+         2.2     0.1103623
+
+        the degree 5 Lagrange interpolating polynomial in the 
+        form p(x)=sum prod f[x0,..,xk](x-x0)...(x-xk-1) has
+        coefficients f[x0,..,xk] given along the diagonal of the table:
+
+        f[xi]           f[xi,xi+1]      f[xi..xi+2]     f[xi..xi+3]     f[xi..xi+4]
+        ---------------------------------------------------------------------------
+         0.7651977                               
+         0.6200860       -0.4837057                      
+         0.4554022       -0.5489460      -0.1087339              
+         0.2818186       -0.5786120      -0.0494433      0.0658784       
+         0.1103623       -0.5715210      0.0118183       0.0680685       0.0018251
+
+        Using these, p(1.5) approximates f(1.5) by:
+        -------------------
+         p(1.5)  = 0.5118200
+```
+
+## Piecewise Polynomial Interpolation of $n+1$ Data Points
+
+Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, and consider the idea of interpolating $f$ on each subinterval $[x_i,x_{i+1}]$ separately by polynomials.  
+
+## Picewise Linear Interpolation 
+
+This is the simplest case, for we just use the 1st Lagrange polynomial $p_i(x)=f(x_i)L_i(x)+f(x_{i+1})L_{i+1}(x)$ on each $[x_i,x_{i+1}]$,
 
 
 [^1]: R[a,b] denotes the polynomials R[x] restricted, as functions, to the interval [a,b].

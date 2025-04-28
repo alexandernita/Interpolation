@@ -1,4 +1,4 @@
-# Lagrange Interpolation
+# Lagrange Interpolation using Neville's Method
 
 import numpy as np
 
@@ -23,7 +23,7 @@ Q[0] = y
 xp = 0.5 
 
 # print title and data points
-print("\n\tExercise 3.2.3 (a), Neville's Method:")
+print("\n\tNeville's Method:")
 print("\n\tGiven %d"%n,"data points on the graph of f,")
 print("\n\t x\t f(x) = 3^x")
 print("\t------------------------")
