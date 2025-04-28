@@ -153,6 +153,7 @@ for i in range(n):
 
 Try the example in the 02-Lagrange_Direct.py file.  
 
+<!--
 #### Using Newton's Divided Differences to Find Lagrange Coefficients
 
 Once we have our Lagrange polynomial $p(x)=\sum_{i=0}^n f(x_i)L_i(x)$, the above are easy methods ready to hand to compute its $y$-value at any $x$ in $[a,b]$.  However, computing the coefficients $a_i$ of $p(x)$ from its definition is a tedious matter involving much FOILing.  
@@ -176,6 +177,7 @@ a_1&=f[x_0,x_1]\\
 a_k&=f[x_0,\dots,x_k]
 \end{aligned}
 $$
+-->
 
 #### Neville's Method
 
