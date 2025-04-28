@@ -135,12 +135,12 @@ Our desired $y$-value $p(x_0)$ is $b_0=B[l]$.  See the 01-Horner_Method.py file 
 We can also simply **compute the Lagrange polynomial's $y$-value $p(x)$ directly** using nested for loops,
 
 ```
-A = [a_n,...,a_1,a_0]
-x = [x0,x1,...,xn] 
-xp = input x-value where to evaluate
+x = [x0,x1,...,xn]                      # x-components of data points
+xp = input x-value where to evaluate    # x-value to be plugged in
+y = [f(x[i]) for i in range(len(x))]    # our function's corresponding y-values
 yp = 0
 
-for i in range(n):
+for i in range(n):                      # nth Lagrange polynomial evaluated at xp
     p = 1
 
     for j in range(n):
