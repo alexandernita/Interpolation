@@ -13,7 +13,8 @@ Q[0] = y
 
 xp = 1.5
 
-# Implementing Newton's Divided Differences Method
+# Implement Newton's Divided Differences Method to get 
+# an upper tirangular matrix Q of divided differences
 for i in range(1,n):
     for j in range(i,n):
         xi = x[j]
@@ -24,7 +25,7 @@ for i in range(1,n):
         Qij.append(s)
     Q[i]=Qij
 
-# Displaying output
+# Display output
 
 # Preamble
 
@@ -58,8 +59,8 @@ for i in range(n):
           "\t",format(S[i][3], ".7f") if type(S[i][3])==float else "",\
           "\t",format(S[i][4], ".7f") if type(S[i][4])==float else "")
 
-# Evaluating at xp using the special form 
-yp = S[0][0]
+# Evaluate p(x) at xp using the special form, and print out
+yp = S[0][0]            # = f(x_0) = f[x_0] = a_0
 
 for i in range(1,n):
     p = 1

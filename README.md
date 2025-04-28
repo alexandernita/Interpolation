@@ -257,7 +257,7 @@ a_k&=f[x_0,\dots,x_k]
 \end{aligned}
 $$
 
-The method of computing these is similar to Neville's method, and only takes only minor modifications to that code to produce a similar table, with say $n=4$,
+The method of computing these is similar to Neville's method, and only takes minor modifications to that code.  If, say, $n=4$, the coefficients $a_0,\dots, a_4$ are read off the top diagonal of the following table
 
 $$
 \begin{aligned}
@@ -269,7 +269,7 @@ x_4\quad       &f[x_4]\quad    &f[x_3,x_4]\quad     &f[x_2,x_3,x_4]\quad    &f[x
 \end{aligned}
 $$
  
-and the coefficients $a_0,\dots, a_4$ are read off the top diagonal.  A simple for loop then evaluates $p(x)$ at any $x_p\in [x_0,x_4]$,
+A simple for loop then evaluates $p(x)$ at any $x_p\in [x_0,x_4]$,
 
 ```
 y = [y_0,y_1,y_2,y_3,y_4]
@@ -282,7 +282,7 @@ for i in range(1,n):
     yp = yp + y[i]*p
 ```
 
-The output of the 04-Newtons_Divided_Differences.py file is 
+The 04-Newtons_Divided_Differences.py file outputs  
 
 ```
         Newton's Divided Difference Method:
