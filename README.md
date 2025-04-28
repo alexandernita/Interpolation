@@ -269,11 +269,11 @@ x_4\quad       &f[x_4]\quad    &f[x_3,x_4]\quad     &f[x_2,x_3,x_4]\quad    &f[x
 \end{aligned}
 $$
  
-and the coefficients $a_0,\dots, a_4$ are read off the top diagonal.  A simple for loop then evaluates $p(x)$ at any $x$-value,
+and the coefficients $a_0,\dots, a_4$ are read off the top diagonal.  A simple for loop then evaluates $p(x)$ at any $x_p\in [x_0,x_4]$,
 
 ```
 y = [y_0,y_1,y_2,y_3,y_4]
-yp = f(xp)
+yp = f(x_0)                     # = f[x_0] = a_0
 
 for i in range(1,n):
     p = 1
@@ -285,7 +285,7 @@ for i in range(1,n):
 The output of the 04-Newtons_Divided_Differences.py file is 
 
 ```
-Newton's Divided Difference Method:
+        Newton's Divided Difference Method:
 
         Given 5 data points on the graph of f,
 
@@ -298,7 +298,7 @@ Newton's Divided Difference Method:
          2.2     0.1103623
 
         the degree 5 Lagrange interpolating polynomial in the 
-        form p(x)=sum prod f[x0,..,xk](x-x0)...(x-xk-1) has
+        form p(x)=sum_k f[x0,..,xk] (x-x0)...(x-xk-1) has
         coefficients f[x0,..,xk] given along the diagonal of the table:
 
         f[xi]           f[xi,xi+1]      f[xi..xi+2]     f[xi..xi+3]     f[xi..xi+4]
