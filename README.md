@@ -261,11 +261,11 @@ The method of computing these is similar to Neville's method, and only takes onl
 
 $$
 \begin{aligned}
-x_0\equiv       &f[x_0]\quad    &                    &                       &                          &\\
-x_1\equiv       &f[x_1]\quad    &f[x_0,x_1]\quad     &                       &                          &\\
-x_2\equiv       &f[x_2]\quad    &f[x_1,x_2]\quad     &f[x_0,x_1,x_2]\quad    &                          &\\
-x_3\equiv       &f[x_3]\quad    &f[x_2,x_3]\quad     &f[x_1,x_2,x_3]\quad    &f[x_0,x_1,x_2,x_3]\quad   &\\
-x_4\equiv       &f[x_4]\quad    &f[x_3,x_4]\quad     &f[x_2,x_3,x_4]\quad    &f[x_1,x_2,x_3,x_4]\quad   &f[x_0,x_1,x_2,x_3,x_4]
+x_0\quad       &f[x_0]\quad    &                    &                       &                          &\\
+x_1\quad       &f[x_1]\quad    &f[x_0,x_1]\quad     &                       &                          &\\
+x_2\quad       &f[x_2]\quad    &f[x_1,x_2]\quad     &f[x_0,x_1,x_2]\quad    &                          &\\
+x_3\quad       &f[x_3]\quad    &f[x_2,x_3]\quad     &f[x_1,x_2,x_3]\quad    &f[x_0,x_1,x_2,x_3]\quad   &\\
+x_4\quad       &f[x_4]\quad    &f[x_3,x_4]\quad     &f[x_2,x_3,x_4]\quad    &f[x_1,x_2,x_3,x_4]\quad   &f[x_0,x_1,x_2,x_3,x_4]
 \end{aligned}
 $$
  
