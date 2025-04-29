@@ -17,7 +17,8 @@ This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we
 Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The $n\text{th}$ **Lagrange polynomial** 
 
 $$
-p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x),
+\boxed{\ 
+p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)\ },
 \quad \text{where}\quad L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
 $$
 
@@ -37,21 +38,21 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
-For example, if we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the 1st Lagrange polynomial is the *unique line through the two points*, 
+        1. If we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the 1st Lagrange polynomial is the *unique line through the two points*, 
+        
+        $$
+        p(x)    = f(x_0)L_0(x)+f(x_1)L_1(x)
+                = f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
+        $$
 
-$$
-p(x)    = f(x_0)L_0(x)+f(x_1)L_1(x)
-        = f(x_0)\frac{x-x_1}{x_0-x_1}+f(x_1)\frac{x-x_0}{x_1-x_0}
-$$
+        2. If we have three data points ($n=2$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, $(x_2,f(x_2))$, then the 2nd Lagrange polynomial is the *unique parabola passing through the three points*,
 
-while if we have three data points ($n=2$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, $(x_2,f(x_2))$, then the 2nd Lagrange polynomial is the *unique parabola passing through the three points*,
-
-$$
-\begin{aligned}
-p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)+f(x_2)L_2(x)\\
-        &= f(x_0)\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f(x_1)\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f(x_2)\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
-\end{aligned}
-$$
+        $$
+        \begin{aligned}
+        p(x)    &= f(x_0)L_0(x)+f(x_1)L_1(x)+f(x_2)L_2(x)\\
+                &= f(x_0)\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f(x_1)\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f(x_2)\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
+        \end{aligned}
+        $$
 
 Uniqueness of $p$ follows from the fact that $(L_0, L_1,\dots, L_n)$ forms a basis for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$. 
 
