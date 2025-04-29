@@ -24,9 +24,11 @@ p(x)    &= f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)\\
 \end{aligned}\ }
 $$
 
-is the *unique degree* $n$ polynomial passing through the $n+1$ points, since 
+is the *unique degree* $n$ polynomial passing through the $n+1$ points, since $(L_0, L_1,\dots, L_n)$ forms a **basis** for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$, seeing as
 
 $$
+L_i(x)\stackrel{\text{def}}{=}\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
+\quad\implies \quad
 L_i(x_j)=
 \begin{cases}
 0,& \text{if }i\neq j\\ 
@@ -40,7 +42,7 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
-Uniqueness of $p$ follows from the fact that $(L_0, L_1,\dots, L_n)$, where $L_i(x)=\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}$, forms a **basis** for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$.
+Examples:
 
         1. If we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the 1st Lagrange polynomial is the *unique line through the two points*, 
         
