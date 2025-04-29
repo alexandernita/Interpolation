@@ -17,9 +17,11 @@ This of course requires the unknown $f$ to at least belong to $C([a,b])$.  If we
 Given data points $(x_0,f(x_0)),\dots,(x_n,f(x_n))$, we first seek to connect, or **interpolate** them by a **single polynomial** $p(x)$.  The $n\text{th}$ **Lagrange polynomial** 
 
 $$
-\boxed{\ 
-p(x)=f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)\ },
-\quad \text{where}\quad L_i(x)=\displaystyle \frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
+\boxed{
+\ \begin{aligned} 
+p(x)    &= f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)\\
+        &= \sum_{i=0}^nf(x_i)\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
+\end{aligned}\ }
 $$
 
 is the *unique degree* $n$ polynomial passing through the $n+1$ points, since 
@@ -38,6 +40,8 @@ f(x_j),&\text{if }i=j
 \end{cases}
 $$  
 
+Uniqueness of $p$ follows from the fact that $(L_0, L_1,\dots, L_n)$, where $L_i(x)=\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}$, forms a **basis** for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$.
+
         1. If we only have two data points ($n=1$), say $(x_0,f(x_0))$, $(x_1,f(x_1))$, the 1st Lagrange polynomial is the *unique line through the two points*, 
         
         $$
@@ -54,7 +58,7 @@ $$
         \end{aligned}
         $$
 
-Uniqueness of $p$ follows from the fact that $(L_0, L_1,\dots, L_n)$ forms a basis for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$. 
+ 
 
 ### Error Bound for Lagrange Interpolation
 
