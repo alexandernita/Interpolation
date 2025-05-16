@@ -3,7 +3,6 @@
 import numpy as np
 
 # Reading number of unknowns
-# n = int(input('Enter number of data points: '))
 
 x = [-2.0, -1.0, 0.0, 1.0, 2.0]
 

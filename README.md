@@ -24,7 +24,7 @@ p(x)    &= f(x_0)L_0(x)+\cdots +f(x_n)L_n(x)\\
 \end{aligned}\ }
 $$
 
-is the *unique degree* $n$ polynomial passing through the $n+1$ points, since $(L_0, L_1,\dots, L_n)$ forms a **basis** for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$, seeing as
+is the *unique degree* $n$ polynomial passing through the $n+1$ points, since $(L_0, L_1,\dots, L_n)$ forms a **basis** for the $(n+1)$-dimensional vector space $\mathbb{R}_n[x]$ of polynomials of degree $\leq n$, as can be seen from
 
 $$
 L_i(x)\stackrel{\text{def}}{=}\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}
@@ -88,9 +88,11 @@ for i in range(0,n+1):
     p = p+A[n-i]*x0**i
 ```
 
+This method is used for comparison purposes in the 01-Horer_Method.py file.  
+
 #### Horner's Method 
 
-**Horner's method** uses polynomial division.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the **quotient polynomial**, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
+**Horner's method** uses polynomial division instead.  Let $q(x)=\sum_{k=0}^{n-1}b_{k+1}x^k$ be the **quotient polynomial**, and $b_0$ the remainder term, obtained from dividing $p(x)$ by $(x-x_0)$,
 
 $$
 p(x)=(x-x_0)q(x)+b_0

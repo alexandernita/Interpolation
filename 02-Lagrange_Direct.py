@@ -4,23 +4,25 @@
 import numpy as np
 
 # Reading number of unknowns
-n = int(input('\n Enter number of data points: \n\n'))
+n = int(input('\n\n Enter number of data points, n = '))
 
-# Making numpy array of n & n x n size and initializing 
-# to zero for storing x and y value along with differences of y
-x = np.zeros((n))
-y = np.zeros((n))
+# Input the data points
 
+X = []
+Y = []
 
-# Reading data points
-print('Enter data for x and y: \n')
 for i in range(n):
-    x[i] = float(input( 'x['+str(i)+']='))
-    y[i] = float(input( 'y['+str(i)+']='))
+    X.append(float(input('\t x['+str(i)+'] = ')))
+    Y.append(float(input('\t y['+str(i)+'] = ')))
 
+print("\n\t Data Points Entered")
+print("\t x\t y")
+print("\t ---------------")
+for i in range(n):
+    print("\t {:<0.2f}\t {:<0.2f}".format(X[i],Y[i]))
 
 # Reading interpolation point
-xp = float(input('\n Enter interpolation point: \n'))
+xp = float(input('\n\t Enter interpolation point: x_0 = '))
 
 # Set interpolated value initially to zero
 yp = 0
@@ -32,9 +34,9 @@ for i in range(n):
     
     for j in range(n):
         if i != j:
-            p = p * (xp - x[j])/(x[i] - x[j])
+            p = p * (xp - X[j])/(X[i] - X[j])
     
-    yp = yp + p * y[i]    
+    yp = yp + p * Y[i]    
 
 # Displaying output
-print('\n Interpolated value at %.7f is %.7f.' % (xp, yp))
+print('\n\t The interpolated value is p({0:0.2f}) = {1:.7f}.\n'.format(xp, yp))
