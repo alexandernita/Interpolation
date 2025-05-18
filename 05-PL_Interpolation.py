@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # The integer-valued nodes between -1 and 6 
 x = np.linspace(1,8)
-
+print(x)
 # The continuous function we'll be approximating
 def f(x):
     return x*(x-2)*np.exp(3-x)
@@ -34,7 +34,7 @@ for i in range(len(x)):
 # Plot f(x) and g(x)
 W = np.linspace(1,8,8)
 B, BX = plt.subplots()
-#B1 = BX.plot(x,f(x),color="k",linewidth=1)
+B1 = BX.plot(x,f(x),color="k",linewidth=1)
 B2 = BX.plot(x,Z,color="r",linewidth=1)
 BX.legend(("f(x) = x*(x-2)*exp(3-x)","g(x) = the PL function"))
 BX.set_title("Plot of f(x) against PL g(x).")
