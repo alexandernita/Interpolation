@@ -1,4 +1,4 @@
-# 3.5 - Example 2
+# Example Natural Cubic Spline Interpolating Four Data Points
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +15,7 @@ h = [x[i+1]-x[i] for i in range(n)]
 alpha = [3*(a[i+1]-a[i])/h[i]-3*(a[i]-a[i-1])/h[i-1] for i in range(1,n)]
 
 # Solving the tridiagonal matrix equation using Algorithm 6.7
-    # Step 1: define l's, m's and z's
+# Step 1: define l's, m's and z's
 l = [1]
 m = [0]
 z = [0]
@@ -28,7 +28,7 @@ for i in range(1,n):
 l.append(1)
 z.append(0)
 
-    # Step 2: solve for the c's, b's and d's
+# Step 2: solve for the c's, b's and d's
 C = [0]
 c = []
 b = []
