@@ -2,6 +2,7 @@
 
 In a world dominated by information, we often find ourselves possessed of collections of **data points**
 
+$$
 \begin{array}{l|l}
 x           &y\\
 \hline
@@ -9,6 +10,7 @@ x_0        &y_0\\
 \ \vdots   &\ \vdots\\
 x_n        &y_n
 \end{array}
+$$
 
 the second column presumably the outputs $y_i=f(x_i)$ of some unknown, but sought, function $f(x)$ describing a process of interest.  Since we don't know $f(x)$, we try to ***guess*** its other $y$-values by means of some known simple function, like a line or a polynomial.  This ***connecting*** of the dots by a guessed function of convenience is called ***interpolation***.  There are ***two basic methods***:
 
